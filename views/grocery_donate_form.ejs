@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Donate Food</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      body {
+        background-image: url("https://static.vecteezy.com/system/resources/previews/001/409/329/original/colorful-organic-geometric-shapes-abstract-background-free-vector.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+      }
+      .con {
+        display: flex;
+        align-items: center;
+      }
+      .maincon {
+        margin-top: 100px;
+      }
+      .head {
+        text-align: center;
+      }
+      .con2 {
+        display: flex;
+        justify-content: center;
+      }
+      .content {
+        height: auto;
+        width: 600px;
+        box-shadow: 0 0 5px gray;
+        background-color: white;
+        border-radius: 8px;
+        padding: 30px;
+        margin-bottom: 20px;
+      }
+
+      .spans {
+        max-width: 500px;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .box {
+        margin-top: 10px;
+        margin-left: 10px;
+        box-shadow: 0 0 5px grey;
+        padding: 10px;
+      }
+      select {
+        width: 370px;
+        height: 40px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        background-color: white;
+        border: 2px solid gray;
+      }
+      .address {
+        width: 500px;
+        box-shadow: 0 0 5px grey;
+        border-radius: 5px;
+        padding: 10px;
+      }
+      .address p {
+        margin: 0;
+      }
+      .donate {
+        margin: 20px 0px 0px 0px;
+        display: flex;
+        justify-content: center;
+      }
+      .donate button {
+        height: 50px;
+        width: 150px;
+        background-color: rgb(66 164 199);
+        border-radius: 5px;
+        border: none;
+        color: white;
+      }
+      .donate button:hover {
+        box-shadow: 1px 1px 5px rgb(0, 42, 104);
+      }
+      .btb {
+        height: 40px;
+        width: 100px;
+        background-color: rgb(160, 216, 29);
+        border-radius: 5px;
+        border: none;
+        color: white;
+      }
+      .btb:hover {
+        box-shadow: 1px 1px 5px rgb(11, 114, 27);
+      }
+      #def_in {
+        height: 40px;
+        padding: 10px;
+        border: 1px solid gray;
+        border-radius: 5px;
+      }
+      #inputContainer {
+        margin-bottom: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-top: 10px;
+      }
+      #inputContainer input {
+        margin-right: 10px;
+        margin-top: 12px;
+        text-align: left;
+        border: 2px solid gray;
+      }
+      #inputContainer img {
+        cursor: pointer;
+        margin-top: -5px;
+        height: 40px;
+        width: 40px;
+      }
+      #inputContainer div {
+        display: flex;
+        flex-wrap: wrap-reverse;
+      }
+      #inp1 {
+        height: 40px;
+        padding: 10px;
+        width: 370px;
+        border-radius: 5px;
+      }
+      #inp2 {
+        height: 40px;
+        padding: 10px;
+        width: 20%;
+        border-radius: 5px;
+      }
+      #inp1:focus,
+      #inp2:focus,
+      #org_sel:focus {
+        border: none;
+        outline: 2px solid rgb(1, 1, 93);
+        box-shadow: 0 0 5px rgb(112, 112, 255);
+      }
+      .hed {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .popup {
+        height: 100ch;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        background-color: rgba(0, 0, 0, 0.37);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        display: none;
+      }
+      .popChild {
+        background-color: white;
+        height: 220px;
+        width: 420px;
+        padding: 20px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      #done {
+        height: 40px;
+        width: 100px;
+        border-radius: 5px;
+        border: none;
+        background-color: deepskyblue;
+        box-shadow: 1px 1px 5px gray;
+        color: white;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-dark fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">FOOD DONATION</a>
+        <div class="con">
+          <h3
+            class="navbar-toggler"
+            data-bs-toggle="offcanvas"
+            aria-controls="offcanvasDarkNavbar"
+            aria-label="Toggle navigation"
+            style="border: none"
+          >
+            <%= don_details.Donor_name %>
+          </h3>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasDarkNavbar"
+            aria-controls="offcanvasDarkNavbar"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+
+        <div
+          class="offcanvas offcanvas-end text-bg-dark"
+          tabindex="-1"
+          id="offcanvasDarkNavbar"
+          aria-labelledby="offcanvasDarkNavbarLabel"
+        >
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">MENU</h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="#"
+                  style="
+                    background-color: #666699;
+                    padding-left: 20px;
+                    border-radius: 5px;
+                  "
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="/don_profile"
+                  >Profile</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="/don_history"
+                  >History</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/logout">LogOut</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="maincon">
+      <h1 class="head">DONATE GROCERY</h1>
+      <div class="con2">
+        <div class="content">
+          <div class="hed">
+            <h3 class="additems">Grocery Items</h3>
+            <button class="btb" id="addInputButton">Add Item +</button>
+          </div>
+          <form id="foodform" action="/donat_grocery_submit" method="post">
+            <label>Donation:</label>
+            <input
+              type="text"
+              name="Donation"
+              value="Grocery"
+              id="def_in"
+              readonly
+            />
+            <div id="inputContainer">
+              <div>
+                <input
+                  type="text"
+                  name="item"
+                  placeholder="Item Name"
+                  id="inp1"
+                  required
+                />
+                <input
+                  type="number"
+                  name="qty"
+                  placeholder="Qty"
+                  id="inp2"
+                  required
+                />
+              </div>
+            </div>
+
+            <h3 class="donate-to">Donate To:</h3>
+            <select name="orgname" id="org_sel" required>
+              <option selected hidden value="">Select Organization</option>
+              <% for (let i = 0; i < dataArr.org_data.length; i++) { %>
+              <option value="<%= dataArr.org_data[i].organization_name %>">
+                <%= dataArr.org_data[i].organization_name %>, <%=
+                dataArr.org_data[i].city %>
+              </option>
+              <% } %>
+            </select>
+          </form>
+          <h3 class="contact">Contact:</h3>
+          <p class="phone"><%= don_details.ph_no %></p>
+          <h3 class="address-con">Address:</h3>
+          <div class="address">
+            <p>
+              <%= don_details.city %>,<%= don_details.street %><br />
+              <%= don_details.dist %>, <%= don_details.state %><br />
+              <%= don_details.pincode %>
+            </p>
+          </div>
+          <div class="donate">
+            <button
+              type="submit"
+              id="don_bt"
+              form="foodform"
+              onclick="donate()"
+            >
+              Donate
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="popup">
+        <div class="popChild">
+          <div>
+            <h3 style="color: rgb(1, 184, 1); font-weight: bold">
+              Thank You For Donating.!
+            </h3>
+            <p>
+              Organization will reach your address<br />
+              and contacts you.
+            </p>
+          </div>
+          <div style="display: flex; justify-content: end">
+            <button id="done">Done</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function removeInput() {
+        this.parentElement.remove();
+      }
+      function addInput() {
+        const childDiv = document.createElement("div");
+        childDiv.innerHTML = `
+            <input type="text" name="item" placeholder="Item Name" id="inp1" required>
+            <input type="number" name="qty" placeholder="Qty" id="inp2" required>
+        `;
+        const inputContainer = document.getElementById("inputContainer");
+
+        const del = document.createElement("img");
+        del.src = "https://img.icons8.com/?size=50&id=3062&format=png";
+        del.id = "remove";
+        childDiv.appendChild(del);
+        inputContainer.appendChild(childDiv);
+
+        del.addEventListener("click", removeInput);
+      }
+
+      const addButton = document.getElementById("addInputButton");
+      addButton.addEventListener("click", addInput);
+
+      document.getElementById("done").addEventListener("click", () => {
+        window.location.href = "/don_history";
+      });
+
+      function donate() {
+        document.querySelectorAll("#inp1").forEach((ele) => {
+          if (
+            ele.value != "" &&
+            document.getElementById("org_sel").value != ""
+          ) {
+            document.querySelector(".popup").style.display = "flex";
+            document.documentElement.scrollTop = 0;
+          }
+        });
+      }
+      function donate() {
+        document.querySelectorAll("#inp2").forEach((ele) => {
+          if (
+            ele.value != "" &&
+            document.getElementById("org_sel").value != ""
+          ) {
+            document.querySelector(".popup").style.display = "flex";
+            document.documentElement.scrollTop = 0;
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

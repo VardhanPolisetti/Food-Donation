@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register Home</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,600&family=Open+Sans:wght@600&family=Poppins:wght@700&family=Roboto+Condensed:wght@700&family=Roboto:wght@400;700&family=Salsa&display=swap");
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+      body {
+        background-image: url("https://www.cry.org/wp-content/uploads/health-and-nutrition-for-children.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+        width: 100%;
+      }
+      .navbar {
+        background-color: black;
+        text-align: right;
+        padding: 15px 140px 8px 10px;
+        padding: 15px;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .navbar #hed_col {
+        font-family: Poppins;
+      }
+      .navbar b {
+        color: white;
+        margin-left: 60px;
+        font-family: Poppins;
+      }
+      .navbar a {
+        margin-right: 60px;
+        font-family: Arial, Helvetica, sans-serif;
+        text-decoration: none;
+        color: #c4c4c4;
+        font-size: 16px;
+      }
+      .navbar a:hover {
+        font-weight: bold;
+        color: white;
+      }
+      #hed_col {
+        background: linear-gradient(to right, #74ebd5, #acb6e5);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .container {
+        height: 100vh;
+        width: 100%;
+      }
+      .container .heading {
+        height: 50px;
+        padding: 20px;
+        font-family: Poppins;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .reghead {
+        height: 30px;
+        position: absolute;
+        left: 45%;
+        font-weight: bold;
+        font-family: Poppins;
+        background: radial-gradient(
+          circle farthest-corner at center center,
+          #f6f8f9 0%,
+          #e5ebee 30%,
+          #d7dee3 60%,
+          #f5f7f9 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .cards {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-around;
+      }
+      .card1 {
+        width: 500px;
+        height: 60%;
+        font-family: Poppins;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.4);
+        border-radius: 10px;
+        padding: 40px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .card_hed {
+        background: linear-gradient(to right, #2afbd1, #bcc744);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .des {
+        font-size: 20px;
+        text-align: justify;
+        text-indent: 30px;
+        font-family: Salsa;
+      }
+      form {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+      button {
+        height: 45px;
+        width: 160px;
+        padding: 20px;
+        border-radius: 5px;
+        background-color: rgb(255, 145, 28);
+        font-weight: bold;
+        cursor: pointer;
+        border: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.1s;
+      }
+      button:hover {
+        background-color: rgb(255, 132, 0);
+        box-shadow: 1px 1px 6px rgb(0, 0, 0);
+        border: 2px solid white;
+        position: relative;
+        bottom: 2px;
+        right: 2px;
+      }
+
+      .container {
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <b>FOOD <span id="hed_col">DONATION</span></b>
+      <nav class="lognav"><a href="/donlogin">Login</a></nav>
+    </div>
+    <div class="container">
+      <div class="heading">
+        <h2 class="reghead">REGISTRATION</h2>
+      </div>
+
+      <div class="cards">
+        <div class="card1">
+          <h1 class="regorg">
+            For <span class="card_hed">Organizations</span>
+          </h1>
+          <p class="des">
+            We cordially invite your organization to join our food donation
+            website, where you can make a significant impact in the fight
+            against hunger by registering and contributing to our mission.
+          </p>
+          <form action="/orgRegister">
+            <button type="submit">Register</button>
+          </form>
+        </div>
+
+        <div class="card1">
+          <h1 class="regorg">For <span class="card_hed">Donors</span></h1>
+          <p class="des">
+            We extend a warm invitation to potential donors like you to register
+            on our food donation website, empowering you to make a meaningful
+            difference in the lives of those facing hunger through your generous
+            contributions.
+          </p>
+          <form action="/donRegister">
+            <button type="submit">Register</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

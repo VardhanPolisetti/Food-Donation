@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "food-donation-c0792",
+  "private_key_id": "40a555dd1dadbae57ee293146e32f54ff825f2c5",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDGdSrFlZG54/KJ\njGyKANfifNh0au8YkmtVqYRiZ2CvhPXywdpPuJDpWUXjmnHvGau81Q3s/oxer0uH\n+JV2L4/lwhG+kghdAbGpoczn+4e6FPwm6GCCMYWlIVHevq9u5I0VeNQVURl/wtNx\nmvA/dEAVNaCanaZRDuKqSdKqle1iVM/bxuzIjd0YXcJanT32AtsacvwI0KT4jFiN\nzgVBAvOG7q01OTFOpzt+WMCs0bEJC+GXUgs6U3vVo0LKZldYMEhr4dh4id3KswgD\nOMKyy18wB3AZHt3gptlKgXYoqy2iz0QsBy/I+qSkfqg3+0llCecWtq03+gaTOWjc\nZ3gnDWCZAgMBAAECggEABC8muHU7lhGABNXk2PEFHDWZI7U4dsppgGwbSi7XS0QQ\nom5jYbBov7692jtgoROnuwq76S4BvCJSg5qiXhRJIqU5lgzCp+FYA1VRumdjeHEm\nUtSt6jjMkkt2TC21ia9AaT47rHpiAP9U0W2cmJ3lFv1jNjdSMR3Q+hml2ypfj6Xk\nFsWepTXwU41Ls00NH732Wo5lK8BO53ceiLikFxVvRr0lvRjKpeyV+VBGNZWuq/cs\n9cqkQn1fJKVaJmaiGCRiMpERFqRcP9L19HUyQMMgBGd0/BswgukGlCtBQp08Gxg4\nFx098NydJURc7IX2qMO5dw+HKCvmgjuYZ0mN5uLZHQKBgQDzP+222YIyGr6SFxKF\nXhw9/700/cGxi3hc0JKysCAiYm1pO0MBQAORL58y8G36FKR4J0Kq5Sdr0CUOAS01\nU1b8XbYVi74f1o2M+sto4D5hueBKX7JCh+3Mla34NsMjHKDJiKm8T9rkoarzhPdh\njm1gboFyFDovfgNpc6FkaK55VQKBgQDQ3DEjQLBSYs3gcJvrQd9HFpaEXUbf1EU4\nNrzou91UvxUd80lIhPwm1EKaxwQ0onMBUh6m2c2AtcfMD29rJoayArpMupi4OO+n\nU/1//wnnjDSB7pCqtKhI1mQoDJYoA5jWYPnbZEVQCTef+EgZK8/Zpw0gJURqWYLE\nj4y/Ia06NQKBgQCaomM9wBwSOgo32M7/VYpip3bifwZpFZ6YckcvrONguG2RXgkE\nfGtIGpv7x/hB6Gl9sIejGDXtRc6ojnrs0WQU3oXoQIPGvaASpUQ2EYfWnFFHNnqd\n7MdxLR4BEt8OLR7Rvz0X5zPh8Bw63qZcsCw8B0Pm/5DVrCgDG2zX5ew0WQKBgERM\nbQkhI0edpcNKL8KLxO7jNQ9NzVpueMA8LiRRIryOy+ICZ6l+S1KLQMiKYhawNLlu\n2DUprijzyMUzGvVIIO3fNHrY3g4IGF54ecI8bUm5sIX4tHgOIaXH7fKmwweMvZMF\nHU+gB4Z3rSfzsegBSrPbC9DCPxAj+z45zwXFhnctAoGBAMsaqwYIWf40vZikTP+Q\nQdIKfqrKVsXr5lTYLZzyirWh3xiRFPk0uA9AvbjZ4/18/axDZKPJmRiiltpHJ61o\nDsGCNhVdtuSZK5jdDcWSNIQzCrSGe/kSz5LPQKndT2wy06ix1X7EKgfccvdBfp3h\n7q9eYncZlM2ZuleWix8i3Pmh\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-o0yji@food-donation-c0792.iam.gserviceaccount.com",
+  "client_id": "109958817527950572988",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-o0yji%40food-donation-c0792.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

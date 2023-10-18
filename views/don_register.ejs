@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Donor Registration</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+      /* body {
+        background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      } */
+      body {
+        background-image: url("https://www.cry.org/wp-content/uploads/health-and-nutrition-for-children.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .info {
+        height: 30%;
+      }
+      .info h1 {
+        margin: 20px;
+        text-align: center;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 40px;
+      }
+      .info p {
+        width: 590px;
+        color: rgb(169, 169, 169);
+        font-family: arial;
+        font-size: 14px;
+        text-indent: 60px;
+      }
+      .container {
+        height: 100%;
+        width: 70%;
+        background-color: white;
+        border-radius: 20px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .container h2 {
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .container form {
+        max-width: 80%;
+        height: 475px;
+      }
+      .form_data {
+        height: 470px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      .form_data .input_box {
+        width: 40%;
+        margin: 10px;
+      }
+      .form_data .input_box span {
+        font-family: Arial, Helvetica, sans-serif;
+        color: rgb(108, 108, 108);
+        font-size: 15px;
+      }
+      .form_data .input_box input {
+        height: 30px;
+        width: 100%;
+        padding: 5px;
+        border-radius: 5px;
+        border: 2px solid rgb(92, 92, 255);
+        font-weight: bold;
+      }
+      .form_data .input_box input:focus {
+        outline: none;
+        box-shadow: 0px 0px 5px 1px rgba(139, 50, 255, 0.932);
+      }
+      .form_data .button {
+        width: 100%;
+        margin: 10px;
+        display: flex;
+        justify-content: center;
+      }
+      .form_data .button input {
+        height: 40px;
+        width: 300px;
+        border-radius: 5px;
+        background-color: rgb(255, 132, 0);
+        border: none;
+        font-weight: bold;
+        color: white;
+        cursor: pointer;
+      }
+      .form_data .button input:hover {
+        box-shadow: 1px 1px 6px #06f;
+      }
+      form p {
+        text-align: center;
+      }
+      .bdy {
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #errmsg {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18px;
+        font-weight: bold;
+        color: red;
+      }
+      #sccmsg {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18px;
+        font-weight: bold;
+        color: rgb(0, 183, 0);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bdy">
+      <div class="info">
+        <h1>Donor Registration</h1>
+        <p>
+          We are a country that prides itself on power and wealth, yet there are
+          millions of children who go hungry every day. It is our
+          responsibility, not only as a nation, but also as individuals, to get
+          involved. So, next time you pass someone on the street who is in need,
+          remember how lucky you are, and don't turn away.
+        </p>
+      </div>
+      <div class="container">
+        <h2>Create Account</h2>
+        <% if (sucState) { %>
+        <span id="sccmsg">Register Successfully.! Please Login</span>
+        <% } %> <% if (errState) { %>
+        <span id="errmsg"><%= errMsg %></span>
+        <% } %>
+        <form action="/don_register_submit" method="post">
+          <div class="form_data">
+            <div class="input_box">
+              <span>Name</span>
+              <input
+                type="text"
+                name="user_name"
+                placeholder="Enter Organization Name"
+                required
+              />
+            </div>
+            <div class="input_box">
+              <span>State</span>
+              <input
+                type="text"
+                name="state"
+                placeholder="Enter State"
+                required
+              />
+            </div>
+            <div class="input_box">
+              <span>District</span>
+              <input
+                type="text"
+                name="district"
+                placeholder="Enter District"
+                required
+              />
+            </div>
+            <div class="input_box">
+              <span>City</span>
+              <input
+                type="text"
+                name="city"
+                placeholder="Enter City Name"
+                required
+              />
+            </div>
+            <div class="input_box">
+              <span>Street</span>
+              <input
+                type="text"
+                name="street"
+                placeholder="Enter Street Name"
+                required
+              />
+            </div>
+            <div class="input_box">
+              <span>Pin Code</span>
+              <input
+                type="text"
+                name="pincode"
+                placeholder="Enter Pin Code"
+                required
+              />
+            </div>
+            <div class="input_box">
+              <span>Phone Number</span>
+              <input
+                type="text"
+                name="phone_no"
+                placeholder="Enter Phone Number"
+                required
+              />
+            </div>
+            <div class="input_box">
+              <span>Email</span>
+              <input
+                type="email"
+                name="email"
+                placeholder="Enter Email"
+                required
+              />
+            </div>
+            <div class="input_box">
+              <span>Password</span>
+              <input
+                type="password"
+                name="psw"
+                placeholder="Enter Password"
+                required
+              />
+            </div>
+            <div class="input_box">
+              <span>Confirm Password</span>
+              <input
+                type="password"
+                name="c_psw"
+                placeholder="Re-Enter Password"
+                required
+              />
+            </div>
+            <div class="button">
+              <input type="submit" value="Register" />
+            </div>
+          </div>
+        </form>
+        <p style="font-family: sans-serif; font-size: small">
+          Already have an account? <a href="/donlogin">Login</a>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Org Login</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,600&family=Open+Sans:wght@600&family=Poppins:wght@700&family=Roboto+Condensed:wght@700&family=Roboto:wght@400;700&family=Salsa&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        height: 100vh;
+        /*background: linear-gradient(to right, #0f0c29, #302b63, #24243e);*/
+        background-image: url("https://static.vecteezy.com/system/resources/previews/010/742/835/non_2x/paper-cut-style-design-for-branding-advertising-with-abstract-shapes-modern-background-for-covers-invitations-posters-banners-flyers-placards-illustration-free-vector.jpg");
+        background-size: cover;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .info h1 {
+        color: white;
+        text-align: center;
+        margin: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .info p {
+        width: 500px;
+        text-indent: 20px;
+        color: gray;
+        text-align: center;
+        margin: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      h4 {
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-bottom: 10px;
+        color: white;
+      }
+      h3 {
+        color: white;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .bg_img {
+        background-image: url("https://i0.wp.com/vegofwa.org/wp-content/uploads/2019/11/hungry-child.jpg?resize=860%2C574&ssl=1");
+        background-size: contain;
+        background-repeat: no-repeat;
+        border-radius: 20px;
+      }
+      .container {
+        height: 440px;
+        width: 750px;
+        padding: 20px;
+        border-radius: 20px;
+        border: 2px solid white;
+        background: linear-gradient(to left, black 10%, rgba(0, 0, 0, 0.3));
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+      }
+      .con_bdy {
+        height: 100%;
+      }
+      .qot {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .qot p {
+        font-family: Poppins;
+        font-size: 50px;
+      }
+      .container p {
+        color: rgb(255, 255, 255);
+      }
+      .container form {
+        height: 75%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .container form .input_box p {
+        color: gray;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: left;
+      }
+      .container form input {
+        height: 20px;
+        width: 300px;
+        padding: 10px;
+        border-radius: 5px;
+        border: 2px solid rgb(92, 92, 255);
+        font-weight: bold;
+      }
+      .container form input:focus {
+        outline: none;
+        box-shadow: 0px 0px 5px 1px rgba(173, 110, 255, 0.932);
+      }
+      .container form .button input {
+        height: 50px;
+        width: 322px;
+        padding: 10px;
+        background-color: rgb(28 180 165);
+        border: none;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 5px;
+        box-shadow: 1px 1px 4px gray;
+      }
+      .container form .button input:hover {
+        background-color: rgb(68, 160, 151);
+      }
+      #reg_link {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: small;
+        text-align: center;
+        margin: 20px;
+      }
+      #back {
+        width: 50px;
+        height: 50px;
+        background-color: white;
+        border-radius: 50%;
+        color: white;
+        border: none;
+        box-shadow: 1px 1px 3px black;
+        border-radius: 30px;
+        cursor: pointer;
+        position: absolute;
+        left: 30px;
+      }
+      .fleshmsg {
+        height: 5px;
+        width: 500px;
+        padding: 20px;
+        margin-bottom: 10px;
+        border: 3px solid rgb(255, 0, 0);
+        background-color: rgba(255, 82, 56, 0.379);
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="info">
+      <h1>Donation Organization</h1>
+      <p>
+        Organizations are non-profit organizations that distribute food free of
+        charge to the public. And bridge the gap between food surplus and food
+        scarcity, reducing food waste and contributing to the well-being of
+        society.
+      </p>
+    </div>
+    <% if (errState) { %>
+    <div class="fleshmsg">
+      <span><%= errMsg %></span>
+    </div>
+    <% } %>
+    <div class="bg_img">
+      <div class="container">
+        <div class="qot">
+          <p><span style="color: rgb(255, 234, 0)">Donate</span> and</p>
+          <p>Make</p>
+          <p>
+            Someone feel <span style="color: rgb(89, 242, 89)">Great!</span>
+          </p>
+        </div>
+        <div class="con_bdy">
+          <h3>Organization</h3>
+          <h4>Login</h4>
+          <form action="/org_login_submit" method="post">
+            <div class="input_box">
+              <p>Organization ID</p>
+              <input
+                type="text"
+                name="org_id"
+                placeholder="Enter Organization ID"
+              />
+            </div>
+            <div class="input_box">
+              <p>Email</p>
+              <input
+                type="email"
+                name="email"
+                placeholder="Enter Email"
+                required
+              />
+            </div>
+            <div class="input_box">
+              <p>Password</p>
+              <input
+                type="password"
+                name="psw"
+                placeholder="Enter Password"
+                required
+              />
+            </div>
+            <div class="button">
+              <input type="submit" value="Login" />
+            </div>
+          </form>
+          <p id="reg_link">
+            Register New Organization?
+            <a href="/orgRegister" style="color: skyblue">Register</a>
+          </p>
+          <button href="" id="back">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/709/709624.png"
+              height="30px"
+              width="30px"
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById("back").addEventListener("click", () => {
+        window.history.back();
+      });
+    </script>
+  </body>
+</html>

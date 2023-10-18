@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <title>Document</title>
+    <style>
+      body {
+        background-image: url("https://static.vecteezy.com/system/resources/previews/004/227/842/non_2x/modern-abstract-background-with-minimal-cover-design-colorful-and-cute-geometric-background-for-web-banner-poster-illustration-hand-drawn-various-shapes-and-doodle-objects-vector.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+      }
+      .container {
+        height: auto;
+      }
+      .container h3 {
+        margin-top: 60px;
+        text-align: center;
+        font-weight: bold;
+      }
+      .his_list {
+        padding: 40px;
+        width: 100%;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 0 5px gray;
+        margin-bottom: 15px;
+      }
+      .container .his_list p {
+        margin: 0;
+      }
+      .donated_div {
+        height: 180px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .status_info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+      }
+      .org_info {
+        text-align: center;
+        color: gray;
+      }
+      #status1 {
+        height: 50px;
+        width: 150px;
+        padding: 10px;
+        text-align: center;
+        border-radius: 5px;
+        border: 2px solid rgb(255, 106, 106);
+        color: rgb(255, 126, 126);
+        background-color: rgba(255, 126, 126, 0.164);
+        font-weight: bold;
+      }
+      #status2 {
+        height: 50px;
+        width: 150px;
+        padding: 10px;
+        text-align: center;
+        border-radius: 5px;
+        border: 2px solid orange;
+        color: orange;
+        background-color: rgba(255, 166, 0, 0.135);
+        font-weight: bold;
+      }
+      #status3 {
+        height: 50px;
+        width: 150px;
+        padding: 10px;
+        text-align: center;
+        border-radius: 5px;
+        border: 2px solid rgb(33, 194, 44);
+        color: rgb(49, 174, 47);
+        background-color: rgba(49, 174, 47, 0.151);
+        font-weight: bold;
+      }
+      .one-items {
+        height: auto;
+        margin-top: 1%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .one-item-one {
+        box-shadow: 1.3px 1.3px 3px gray;
+        padding: 0.5% 5%;
+        margin-right: 2%;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-dark fixed-top">
+      <div class="container-fluid">
+        <h5 style="color: white">FOOD DONATION</h5>
+        <div style="display: flex; align-items: center">
+          <h6 style="color: rgb(161, 161, 161); margin-right: 10px">
+            <%= name %>
+          </h6>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasDarkNavbar"
+            aria-controls="offcanvasDarkNavbar"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+        <div
+          class="offcanvas offcanvas-end text-bg-dark"
+          tabindex="-1"
+          id="offcanvasDarkNavbar"
+          aria-labelledby="offcanvasDarkNavbarLabel"
+        >
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Menu</h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link active" href="/don_home">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="/don_profile">Profile</a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  href="#"
+                  style="
+                    background-color: #666699;
+                    padding-left: 20px;
+                    border-radius: 5px;
+                  "
+                  >History</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/logout">Logout</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <h3>History</h3>
+      <% for(let i = 0; i < dataArr.don_his_data.length; i++){ %>
+      <div class="his_list">
+        <div class="donated_div">
+          <div>
+            <p><b>Donated to:</b> <%= dataArr.don_his_data[i].Donate_to %></p>
+            <p><b>Donation:</b> <%= dataArr.don_his_data[i].Donation %></p>
+            <b>Your Address:</b>
+            <p><%= dataArr.don_his_data[i].address %></p>
+            <b>Items:</b>
+            <div class="one-items">
+              <% if (Array.isArray(dataArr.don_his_data[i].Items)) { %>
+                <% for (let j = 0; j < dataArr.don_his_data[i].Items.length; j++) { %>
+                  <div class="one-item-one">
+                    <span><%= dataArr.don_his_data[i].Items[j] %></span>
+                    <span><span style="color: gray">Qty:</span><%= dataArr.don_his_data[i].EachItem_Qty[j] %></span>
+                  </div>
+                <% } %>
+              <% } else { %>
+                <div class="one-item-one">
+                  <span><%= dataArr.don_his_data[i].Items %></span>
+                  <span><span style="color: gray">Qty:</span><%= dataArr.don_his_data[i].EachItem_Qty %></span>
+                </div>
+              <% } %>
+            </div>
+          </div>
+          <div class="org_info">
+            <p><%= dataArr.don_his_data[i].Date %></p>
+            <p>Organization Contact: <%= dataArr.don_his_data[i].Organization_ph %></p>
+          </div>
+          <% if(dataArr.don_his_data[i].Status == "Pending"){ %>
+            <div class="status_info">
+              <span id="status1">Pending</span>
+              <span>Organization will inform you shortly</span>
+            </div>
+          <% } %>
+          <% if(dataArr.don_his_data[i].Status == "Accepted"){ %>
+            <div class="status_info">
+              <span id="status2">Accepted</span>
+              <span>Organization will reach out to you in <%= dataArr.don_his_data[i].time %></span>
+            </div>
+          <% } %>
+          <% if(dataArr.don_his_data[i].Status == "Collected"){ %>
+            <div class="status_info">
+              <span id="status3">Donated</span>
+              <span>Donated Successfully</span>
+            </div>
+          <% } %>
+        </div>
+      </div>
+      <% } %>
+    </div>
+  </body>
+</html>

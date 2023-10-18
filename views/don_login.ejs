@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Donor Login</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,600&family=Open+Sans:wght@600&family=Poppins:wght@700&family=Roboto+Condensed:wght@700&family=Roboto:wght@400;700&family=Salsa&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        height: 100vh;
+        /*background: linear-gradient(to right, #0f0c29, #302b63, #24243e);*/
+        background-image: url("https://static.vecteezy.com/system/resources/previews/010/742/835/non_2x/paper-cut-style-design-for-branding-advertising-with-abstract-shapes-modern-background-for-covers-invitations-posters-banners-flyers-placards-illustration-free-vector.jpg");
+        background-size: cover;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .info h1 {
+        color: white;
+        text-align: center;
+        margin: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .info p {
+        width: 500px;
+        text-indent: 20px;
+        color: gray;
+        text-align: justify;
+        margin: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      h4 {
+        color: white;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-bottom: 10px;
+      }
+      h3 {
+        color: white;
+        font-size: 20px;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .bg_img {
+        background-image: url("https://i0.wp.com/vegofwa.org/wp-content/uploads/2019/11/hungry-child.jpg?resize=860%2C574&ssl=1");
+        background-size: contain;
+        background-repeat: no-repeat;
+        border-radius: 20px;
+      }
+      .container {
+        height: 400px;
+        width: 700px;
+        padding: 20px;
+        border: 2px solid white;
+        border-radius: 20px;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        background: linear-gradient(to left, black 10%, rgba(0, 0, 0, 0.3));
+      }
+      .qot {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .qot p {
+        font-family: Poppins;
+        font-size: 70px;
+      }
+      .con_bdy {
+        height: 100%;
+      }
+      .container p {
+        color: rgb(255, 255, 255);
+      }
+      .container form {
+        height: 75%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .container form .input_box p {
+        color: gray;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: left;
+      }
+      .container form input {
+        height: 20px;
+        width: 300px;
+        padding: 10px;
+        border-radius: 5px;
+        border: 2px solid rgb(92, 92, 255);
+        font-weight: bold;
+      }
+      .container form input:focus {
+        outline: none;
+        box-shadow: 0px 0px 5px 1px rgba(174, 111, 255, 0.932);
+      }
+      .container form .button input {
+        height: 50px;
+        width: 322px;
+        padding: 10px;
+        background-color: rgb(28 180 165);
+        border: none;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 5px;
+        box-shadow: 1px 1px 3px gray;
+      }
+      .container form .button input:hover {
+        background-color: rgb(68, 160, 151);
+      }
+      #reg_link {
+        text-align: center;
+        margin: 20px;
+      }
+      .org_button {
+        padding: 40px;
+      }
+      .org_button button {
+        height: 50px;
+        width: 310px;
+        border: 2px solid orange;
+        background-color: rgba(250, 128, 114, 0.082);
+        color: orange;
+        font-weight: bold;
+        border-radius: 5px;
+      }
+      .org_button button:hover {
+        cursor: pointer;
+        background-color: rgba(250, 128, 114, 0.311);
+        box-shadow: 1px 1px 5px orange;
+        color: white;
+      }
+      #back {
+        height: 50px;
+        width: 50px;
+        position: absolute;
+        bottom: -20px;
+        left: 30px;
+        border-radius: 50%;
+        background-color: white;
+        box-shadow: 1px 1px 4px black;
+        border: none;
+        cursor: pointer;
+      }
+      #reg_link {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: small;
+      }
+      .flashmsg {
+        height: 5px;
+        width: 500px;
+        padding: 20px;
+        margin-bottom: 10px;
+        border: 3px solid rgb(255, 0, 0);
+        background-color: rgba(255, 82, 56, 0.379);
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="info">
+      <h1>Donation Organization</h1>
+      <p>
+        We are a country that prides itself on power and wealth, yet there are
+        millions of children who go hungry every day. It is our responsibility,
+        not only as a nation, but also as individuals, to get involved. So, next
+        time you pass someone on the street who is in need, remember how lucky
+        you are, and don't turn away.
+      </p>
+    </div>
+    <% if (errState) { %>
+    <div class="flashmsg">
+      <span><%= errMsg %></span>
+    </div>
+    <% } %>
+    <div class="bg_img">
+      <div class="container">
+        <div class="qot">
+          <p style="color: rgb(255, 234, 0)">Don't</p>
+          <p style="color: rgb(255, 234, 0)">Waste</p>
+          <p style="color: rgb(48, 255, 48)">Food</p>
+        </div>
+        <div class="con_bdy">
+          <h3>Donor</h3>
+          <h4>Login</h4>
+          <form action="/don_login_submit" method="post">
+            <div class="input_box">
+              <p>Email</p>
+              <input
+                type="email"
+                name="email"
+                placeholder="Enter Email"
+                required
+              />
+            </div>
+            <div class="input_box">
+              <p>Password</p>
+              <input
+                type="password"
+                name="psw"
+                placeholder="Enter Password"
+                required
+              />
+            </div>
+            <div class="button">
+              <input type="submit" value="Login" />
+            </div>
+          </form>
+          <p id="reg_link">
+            Register New as Donor?
+            <a href="donRegister" style="color: skyblue">Register</a>
+          </p>
+        </div>
+        <button id="back">
+          <img
+            src="https://cdn-icons-png.flaticon.com/128/1946/1946436.png"
+            height="30px"
+            width="30px"
+          />
+        </button>
+      </div>
+    </div>
+    <div class="org_button">
+      <form action="/orglogin">
+        <button>Organization Login</button>
+      </form>
+    </div>
+    <script>
+      document.getElementById("back").addEventListener("click", () => {
+        window.location.href = "/";
+      });
+    </script>
+  </body>
+</html>
